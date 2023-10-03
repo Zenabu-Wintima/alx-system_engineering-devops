@@ -1,5 +1,2 @@
 #!/bin/bash
-# Remove empty directory entries from the PATH variable and then count the remaining directories
-count=$(echo "$PATH" | tr ':' '\n' | grep -v '^$' | wc -l)
-# Print the count of directories in the PATH
-echo "$count"
+echo $((' echo $PATH | grep -o ":/" | wc -1 +1))
